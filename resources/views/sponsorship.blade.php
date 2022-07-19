@@ -466,7 +466,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-10">
                     <div class="ud-single-pricing first-item wow fadeInUp me-3" data-wow-delay=".15s">
                         <div class="ud-pricing-header">
-                            <h3>EXHIBITORS PACKAGE-2000</h3>
+                            <h3>EXHIBITORS PACKAGE</h3>
                             <h4>$ 2,000</h4>
                         </div>
                         <div class="ud-pricing-body"></div>
@@ -530,9 +530,9 @@
             <div class="text-center">
                 <h5>Download the partnership confirmation form below to <br> fill and send to this email: info@paediatrics.co.tz</h5>
                 <br>
-                <button class="btn btn-primary mb-5">
+                <a href="{{ url('PAT-Sponsorship-confirmation-form.pdf') }}" class="btn btn-primary mb-5" download>
                     Download confirmation form
-                </button>
+                </a>
                 <br><br>
             </div>
 

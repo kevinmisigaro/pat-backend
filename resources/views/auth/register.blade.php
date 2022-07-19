@@ -93,11 +93,15 @@
 
                                 <form class="user row" method="POST" action="/register">
                                     @csrf
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-4 mb-3">
                                         <label>First Name <span style="color: red">*</span></label>
                                         <input type="text" name="fname" class="form-control" />
                                     </div>
-                                    <div class="col-md-6 mb-3">
+                                    <div class="col-md-4 mb-3">
+                                        <label>Middle name <span style="color: red">*</span></label>
+                                        <input type="text" name="mname" class="form-control" />
+                                    </div>
+                                    <div class="col-md-4 mb-3">
                                         <label>Last Name <span style="color: red">*</span></label>
                                         <input type="text" name="lname" class="form-control" />
                                     </div>

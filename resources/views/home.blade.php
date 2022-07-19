@@ -169,7 +169,7 @@
                         {{-- <span>Features</span> --}}
                         <h2>Registration fees</h2>
                         <p>
-                            Early bird registration until 15th August 2022
+                            Early bird registration until 15th September 2022
                         </p>
                         
                     </div>
