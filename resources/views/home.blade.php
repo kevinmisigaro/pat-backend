@@ -63,7 +63,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#carouselExampleIndicators">
+            <a class="navbar-brand" href="/#home">
                 <img src="{{ asset('pat-logo-white.png') }}" style="max-width: 90px" alt="Logo" />
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -83,13 +83,17 @@
                         <a class="nav-link" href="#themes">Themes</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/sponsorship">Sponsorship</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#guidelines">Guidelines</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#deadlines">Dealines</a>
+                        <a class="nav-link" href="#deadlines">Deadlines</a>
                     </li>
                 </ul>
                 <div class="d-flex">
+                    <a class="btn btn-outline-light me-3" href="/register">Register for Conference</a>
                     <a class="btn btn-outline-light" href="/login">Sign in</a>
                 </div>
             </div>
@@ -97,64 +101,64 @@
     </nav>
 
 
-   <div id="home">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item drk">
-                <div
-                    style="background-image: url('{{ asset('assets/3.jpeg') }}'); height: 70vh; background-size:cover; background-position: 50% center">
+    <div id="home">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item drk">
+                    <div
+                        style="background-image: url('{{ asset('assets/3.jpeg') }}'); height: 70vh; background-size:cover; background-position: 50% center">
+                    </div>
+                    <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                        <div>
+                            <h2 style="color: white">
+                                THEME: Children and Non Communicable <br> Diseases (NCDs)
+                            </h2><br>
+                            <p style="color: white">"Leave no child behind"</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
-                    <div>
+                <div class="carousel-item drk">
+                    <div
+                        style="background-image: url('{{ asset('assets/4.jpeg') }}'); height: 70vh; background-size:cover; background-position: 50% center">
+                    </div>
+                    <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
                         <h2 style="color: white">
-                            THEME: Children and Non Communicable <br> Diseases (NCDs)
-                        </h2><br>
-                        <p style="color: white">"Leave no child behind"</p>
+                            Will take place on October 13<sup>th</sup> - 15<sup>th</sup>
+                        </h2>
+                    </div>
+                </div>
+                <div class="carousel-item drk active">
+                    <div
+                        style="background-image: url('{{ asset('/assets/8.jpeg') }}'); height: 70vh; background-size:cover; background-position: 50% center">
+                    </div>
+                    <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                        <h2 style="color: white">
+                            23<sup>rd</sup> PAT Annual General Meeting<br>
+                            & Scientific Conference
+                        </h2>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item drk">
-                <div
-                    style="background-image: url('{{ asset('assets/4.jpeg') }}'); height: 70vh; background-size:cover; background-position: 50% center">
-                </div>
-                <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
-                    <h2 style="color: white">
-                        Will take place on October 13<sup>th</sup> - 15<sup>th</sup>
-                    </h2>
-                </div>
-            </div>
-            <div class="carousel-item drk active">
-                <div
-                    style="background-image: url('{{ asset('/assets/8.jpeg') }}'); height: 70vh; background-size:cover; background-position: 50% center">
-                </div>
-                <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
-                    <h2 style="color: white">
-                        23<sup>rd</sup> PAT Annual General Meeting<br>
-                        & Scientific Conference
-                    </h2>
-                </div>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-   </div>
 
     <!-- ====== Fees Start ====== -->
     <section id="fees" class="ud-features">
@@ -167,6 +171,7 @@
                         <p>
                             Early bird registration until 15th August 2022
                         </p>
+                        
                     </div>
                 </div>
             </div>
@@ -176,45 +181,54 @@
                     <div class="card bg-light" style="width: 100%">
                         <div class="card-body text-center">
                             <p><b>Paediatricians - Early Bird</b> <br> 100,000 TZS</p>
+                            <br>
+                            <a href="/register">Register now</a>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-md-4 mb-3">
                     <div class="card bg-light" style="width: 100%">
                         <div class="card-body text-center">
                             <p><b>Paediatricians - Late Bird</b> <br> 150,000 TZS</p>
+                            <br>
+                            <a href="/register">Register now</a>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-md-4 mb-3">
                     <div class="card bg-light" style="width: 100%">
                         <div class="card-body text-center">
                             <p><b>Paediatrician On site registration</b> <br> 200,000 TZS</p>
+                            <br>
+                            <a href="/register">Register now</a>
                         </div>
                     </div>
                 </div>
-    
+
                 <div class="col-md-4 mb-3">
                     <div class="card bg-light" style="width: 100%">
                         <div class="card-body text-center">
                             <p><b>Associate members</b> <br> 50,000 TZS </p>
+                            <br>
+                            <a href="/register">Register now</a>
                         </div>
                     </div>
                 </div>
-    
-    
+
+
                 <div class="col-md-4 mb-3">
                     <div class="card bg-light" style="width: 100%">
                         <div class="card-body text-center">
                             <p><b>Non East African Resident</b> <br> 100 USD </p>
-    
+                            <br>
+                            <a href="/register">Register now</a>
                         </div>
                     </div>
                 </div>
-    
-    
+
+
             </div>
         </div>
     </section>
@@ -305,7 +319,9 @@
                             </button>
                             <div id="collapseFour" class="accordion-collapse collapse">
                                 <div class="ud-faq-body">
-                                    Categories: Sexual and reproductive health, Care of newborn and prematurity, Paediatric death review and response, & Mental health and rehabilitation in children and adolescents.
+                                    Categories: Sexual and reproductive health, Care of newborn and prematurity,
+                                    Paediatric death review and response, & Mental health and rehabilitation in children
+                                    and adolescents.
                                 </div>
                             </div>
                         </div>
@@ -321,9 +337,9 @@
                             </button>
                             <div id="collapseFive" class="accordion-collapse collapse">
                                 <div class="ud-faq-body">
-                                   Categories: Sexual and reproductive health, Care of newborn
-                                   and prematurity, Paediatric death review and response, & Mental
-                                   health and rehabilitation in children and adolescents.
+                                    Categories: Sexual and reproductive health, Care of newborn
+                                    and prematurity, Paediatric death review and response, & Mental
+                                    health and rehabilitation in children and adolescents.
                                 </div>
                             </div>
                         </div>
@@ -339,7 +355,8 @@
                             </button>
                             <div id="collapseSix" class="accordion-collapse collapse">
                                 <div class="ud-faq-body">
-                                    Categories: Respiratory disorders, Cardiovascular disorders, & Gastrointestinal disorders.
+                                    Categories: Respiratory disorders, Cardiovascular disorders, & Gastrointestinal
+                                    disorders.
                                 </div>
                             </div>
                         </div>
@@ -350,8 +367,8 @@
     </section>
     <!-- ====== Themes End ====== -->
 
-     <!-- ====== Guidelines ====== -->
-     <section id="guidelines" class="ud-features">
+    <!-- ====== Guidelines ====== -->
+    <section id="guidelines" class="ud-features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -398,7 +415,7 @@
                             4. Your abstract is not successfully submitted until you receive a confirmation e-mail after
                             clicking
                             the final submit button. If you do not receive a confirmation e-mail, please contact us via
-                            XXXXXXXX.
+                            +255782835136.
                         </li>
                     </ol>
                     <br>
@@ -433,7 +450,7 @@
                     </p>
 
                 </div>
-    
+
             </div>
         </div>
     </section>
@@ -450,12 +467,12 @@
                         <p>
                             - <b>Deadline for Abstract Submission: 20th August 2022</b>
                         </p>
-                           <p>
-                               - <b>Notification of acceptance: 15th September 2022</b>
-                           </p>
-                           <p>
-                               - <b>Deadline for conference registration: 09th October, 2022</b>
-                           </p>
+                        <p>
+                            - <b>Notification of acceptance: 15th September 2022</b>
+                        </p>
+                        <p>
+                            - <b>Deadline for conference registration: 09th October, 2022</b>
+                        </p>
                     </div>
                 </div>
                 <div class="ud-about-image">
@@ -499,7 +516,7 @@
                                     <p>info@pediatrics.or.tz</p>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>

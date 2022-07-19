@@ -34,13 +34,17 @@ class AuthController extends Controller
     public function registerStore(Request $request){
         $validator = Validator::make($request->all(), [
             'email' => 'required|unique:users',
-            'name' => 'required',
+            'fname' => 'required',
+            'lname' => 'required',
             'phone' => 'required',
             'gender' => 'required',
             'dob' => 'required',
             'country' => 'required',
             'password' => 'required',
-            'reason' => 'required'
+            'reason' => 'required',
+            'work' => 'required',
+            'profession' => 'required',
+            'region' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -49,7 +53,7 @@ class AuthController extends Controller
         }
 
         $user = User::create([
-            'name' => $request->name,
+            'name' => $request->fname.' '.$request->lname,
             'email' => $request->email,
             'role' => 2,
             'password' => Hash::make($request->password)
@@ -62,17 +66,20 @@ class AuthController extends Controller
             'country_id' => $request->country,
             'phone' => $request->phone,
             'gender' => $request->gender,
-            'application_reason' => $request->reason,
-            'affilication' => $request->affiliation
+            'application_reason' => 1,
+            'affilication' => $request->affiliation,
+            'work' => $request->work,
+            'profession' => $request->profession,
+            'region' => $request->region
         ]); 
  
-        if (Auth::attempt([
-            'email' => $request->email, 
-            'password' => $request->password])) { 
-            return redirect('/home');
-        }
+        // if (Auth::attempt([
+        //     'email' => $request->email, 
+        //     'password' => $request->password])) { 
+        //     return redirect('/home');
+        // }
 
-        session()->flash('error', 'An error has occured');
+        session()->flash('success', 'Registration confirmed. Proceed to login');
         return back();
 
     }

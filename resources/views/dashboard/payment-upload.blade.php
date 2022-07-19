@@ -35,7 +35,7 @@
             <p>
                 <b>Bank name:</b> National Bank of Commerce <br> 
                 <b>Account name:</b> Paediatric Association of Tanzania <br>
-                <b>Account number:</b> 041103002195 <br>
+                <b>Account number:</b> 041103002213 <br>
                 <b>SWIFT CODE:</b> NLCBTZTX <br>
                 <b>BRANCH CODE:</b> 671541
             </p>

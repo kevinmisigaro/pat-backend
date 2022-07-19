@@ -35,12 +35,15 @@ Route::get('guidelines', function(){
     return view('guidelines');
 });
 
+Route::get('sponsorship', function(){
+    return view('sponsorship');
+});
+
 Route::middleware(['auth'])->group(function () {
 
     Route::post('contact',[DashboardController::class,'contact']);
 
     Route::get('home',[DashboardController::class,'main']);
-
 
     Route::get('applicants',[DashboardController::class,'applicants']);
 

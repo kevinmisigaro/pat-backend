@@ -20,6 +20,7 @@ class CreateApplicantsTable extends Migration
             $table->string('gender');
             $table->string('dob');
             $table->string('title')->nullable();
+            $table->string('region');
             $table->foreignId('country_id')->constrained();
             $table->foreignId('theme_id')->nullable()->constrained();
             $table->string('document')->nullable();
@@ -27,6 +28,8 @@ class CreateApplicantsTable extends Migration
             $table->boolean('payed')->default(false);
             $table->string('affiliation')->nullable();
             $table->string('additional_affiliation')->nullable();
+            $table->string('profession');
+            $table->string('work');
             $table->string('coauthor')->nullable();
             $table->integer('application_reason'); //1-->applicant, 2-->coming
             $table->timestamps();

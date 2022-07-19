@@ -11,7 +11,8 @@ class Applicant extends Model
 
     protected $fillable = [
         'user_id', 'mct_number', 'document', 'payed','theme_id', 'country_id','phone','title',
-        'dob','gender', 'application_reason','affiliation','additional_affiliation','coauthor'
+        'dob','gender', 'application_reason','affiliation','additional_affiliation','coauthor',
+        'region', 'profession', 'work', 
     ];
 
     public function user(){
