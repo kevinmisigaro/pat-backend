@@ -48,6 +48,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('applicants',[DashboardController::class,'applicants']);
 
     Route::get('applicant-upload',[DashboardController::class,'displayUploadAbstract']);
+    Route::get('reupload',[DashboardController::class,'editAbstract']);
+    Route::post('reupload',[DashboardController::class,'updateAbstract']);
     Route::post('applicant-upload',[DashboardController::class,'applicantStore']);
     // Route::post('applicant-upload',[AuthController::class,'applicantStore']);
 

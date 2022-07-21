@@ -109,6 +109,57 @@ class DashboardController extends Controller
         return back();
     }
 
+    public function editAbstract(){
+        $applicant = Applicant::where('user_id', Auth::id())->first();
+        $themes = Theme::all();
+
+        return view('dashboard.abstract-reupload', \compact('applicant','themes'));
+    }
+
+    public function updateAbstract(Request $request){
+        $validator = Validator::make($request->all(), [
+            'theme' => 'required',
+            'abstract' => 'required',
+            'title' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            session()->flash('error', 'Enter all details');
+            return back();
+        }
+
+        $applicant = Applicant::where('user_id', Auth::id())->first();
+
+        $wordCount = str_word_count(file_get_contents($request->abstract));
+
+        if($request->hasFile('abstract')){
+            $img_ext = $request->file('abstract')->getClientOriginalExtension();
+            $filename = time() . '.' . $img_ext;
+            $imagePath = $request->file('abstract')->move(public_path('documents'), $filename);//image save public folder
+        }
+
+        $applicant->update([
+            'title' => $request->title,
+            'theme_id' => $request->theme,
+            'document' => $filename,
+            'coauthor' => $request->author
+        ]);
+
+        $body = "<html>
+        You have successfully submitted your abstract. <br>
+         Please wait for your review and check here for periodic updates.<br><br>
+         Kind regards,<br>
+         Paediatric Association of Tanzania.
+        </html>";
+
+        $mailController = new MailController();
+        $mailController->sendMessage('Successful abstract submission',Auth::user()->email,$body);
+
+        session()->flash('success', 'Document uploaded');
+
+        return back();
+    }
+
     public function displayUploadAbstract(){
         $themes = Theme::all();
         return view('dashboard.upload-abstract',\compact('themes'));

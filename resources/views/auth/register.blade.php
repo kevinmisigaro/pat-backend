@@ -95,48 +95,77 @@
                                     @csrf
                                     <div class="col-md-4 mb-3">
                                         <label>First Name <span style="color: red">*</span></label>
-                                        <input type="text" name="fname" class="form-control" />
+                                        <input type="text" name="fname" value="{{ old('fname') }}" class="form-control" />
+                                        @if ($errors->has('fname'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('fname') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label>Middle name <span style="color: red">*</span></label>
-                                        <input type="text" name="mname" class="form-control" />
+                                        <input type="text" value="{{ old('mname') }}" name="mname" class="form-control" />
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label>Last Name <span style="color: red">*</span></label>
-                                        <input type="text" name="lname" class="form-control" />
+                                        <input type="text" value="{{ old('lname') }}" name="lname" class="form-control" />
+                                        @if ($errors->has('lname'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('lname') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label>Email <span style="color: red">*</span></label>
-                                        <input type="email" name="email" class="form-control" />
+                                        <input type="email" value="{{ old('email') }}" name="email" class="form-control" />
+                                        @if ($errors->has('email'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('email') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label>MCT number (optional)</label>
-                                        <input type="text" name="mct_number" class="form-control" />
+                                        <input type="text" value="{{ old('mct_number') }}" name="mct_number" class="form-control" />
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label>Gender <span style="color: red">*</span></label>
-                                        <select name="gender" class="form-control">
+                                        <select name="gender" class="form-control" value="{{ old('gender') }}">
                                             <option value="" selected disabled>
                                                 Select gender
                                             </option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
-
+                                        @if ($errors->has('gender'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('gender') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label>Phone <span style="color: red">*</span></label>
-                                        <input type="text" name="phone" class="form-control" />
+                                        <input type="text" name="phone" value="{{ old('phone') }}" class="form-control" />
+                                        @if ($errors->has('phone'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('phone') }}
+                                            </small>
+                                        @endif
                                     </div>
 
                                     <div class="col-md-6 mb-3">
                                         <label>State/Region<span style="color: red">*</span></label>
                                         <input type="text" name="region" class="form-control" />
+                                        @if ($errors->has('region'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('region') }}
+                                            </small>
+                                        @endif
                                     </div>
 
                                     <div class="col-md-6 mb-3">
                                         <label>Country <span style="color: red">*</span></label>
-                                        <select class="form-control" name="country">
+                                        <select class="form-control" value="{{ old('country') }}" name="country">
                                             <option value="">Select country that your from</option>
                                             @foreach ($countries as $country)
                                             <option value="{{ $country->id }}">
@@ -144,6 +173,11 @@
                                             </option>
                                             @endforeach
                                         </select>
+                                        @if ($errors->has('country'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('country') }}
+                                            </small>
+                                        @endif
                                     </div>
 
                                     {{-- <div class="col-md-6 mb-3">
@@ -156,21 +190,31 @@
 
                                     <div class="col-md-6 mb-3">
                                         <label>Password <span style="color: red">*</span></label>
-                                        <input type="text" name="password" class="form-control" />
+                                        <input type="text" name="password" value="{{ old('password') }}" class="form-control" />
+                                        @if ($errors->has('password'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('password') }}
+                                            </small>
+                                        @endif
                                     </div>
 
                                     <div class="col-md-6 mb-3">
                                         <label>Confirm Password <span style="color: red">*</span></label>
-                                        <input type="text" name="confirmpassword" class="form-control" />
+                                        <input type="text" name="confirmpassword" value="{{ old('confirmpassword') }}" class="form-control" />
                                     </div>
 
-                                    <div class="col-md-6 mb-3">
+                                    {{-- <div class="col-md-6 mb-3">
                                         <label>Date of birth <span style="color: red">*</span></label>
                                         <input type="text" name="dob" class="form-control" />
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6 mb-3">
                                         <label>Your organization <span style="color: red">*</span></label>
                                         <input type="text" name="affiliation" class="form-control" />
+                                        @if ($errors->has('affiliation'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('affiliation') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label>Please select the profession that most closely represents you <span
@@ -189,6 +233,7 @@
                                             <option value="Nurse/nurse practitioner/physician assistant">Nurse/nurse
                                                 practitioner/physician assistant</option>
                                             <option value="Pharmacist">Pharmacist</option>
+                                            <option value="Paediatrician">Paediatrician</option>
                                             <option value="Dentist">Dentist</option>
                                             <option value="Public health official">Public health official</option>
                                             <option value="Testing or laboratory personnel">Testing or laboratory
@@ -198,6 +243,11 @@
                                             <option value="Student">Student</option>
                                             <option value="Other">Other</option>
                                         </select>
+                                        @if ($errors->has('profession'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('profession') }}
+                                            </small>
+                                        @endif
                                     </div>
 
                                     <div class="col-md-6 mb-3">
@@ -214,6 +264,11 @@
                                             <option value="Government">Government</option>
                                             <option value="Other">Other</option>
                                         </select>
+                                        @if ($errors->has('work'))
+                                        <small class="text-danger">
+                                            {{ $errors->first('work') }}
+                                        </small>
+                                    @endif
                                     </div>
 
                                     <button class="btn btn-primary btn-user mt-4 btn-block">

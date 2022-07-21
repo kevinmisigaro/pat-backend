@@ -11,7 +11,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="/home">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fa fa-tachometer"></i>
             <span>Dashboard</span></a>
     </li>
 
@@ -55,6 +55,15 @@
             <i class="fa fa-file-text-o"></i>
             <span>Upload Abstract</span></a>
     </li>
+
+    @if (\Illuminate\Support\Facades\Auth::user()->applicant->document !== null)
+    <li class="nav-item">
+        <a class="nav-link" href="/reupload">
+            <i class="fa fa-file-text-o"></i>
+            <span>Edit Abstract</span></a>
+    </li>
+    @endif
+
     <li class="nav-item">
         <a class="nav-link" href="/payment-upload">
             <i class="fa fa-file-text-o"></i>

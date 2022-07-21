@@ -38,18 +38,16 @@ class AuthController extends Controller
             'lname' => 'required',
             'phone' => 'required',
             'gender' => 'required',
-            'dob' => 'required',
             'country' => 'required',
             'password' => 'required',
-            'reason' => 'required',
             'work' => 'required',
             'profession' => 'required',
             'region' => 'required'
         ]);
 
         if ($validator->fails()) {
-            session()->flash('error', 'Enter all details');
-            return back();
+            // session()->flash('error', 'Enter all details');
+            return back()->withErrors($validator)->withInput($request->input());
         }
 
         $user = User::create([
@@ -62,7 +60,7 @@ class AuthController extends Controller
         $applicant = Applicant::create([
             'user_id' => $user->id, 
             'mct_number' => $request->mct_number, 
-            'dob' => $request->dob,
+            'dob' => "1/11/2022",
             'country_id' => $request->country,
             'phone' => $request->phone,
             'gender' => $request->gender,
@@ -73,11 +71,11 @@ class AuthController extends Controller
             'region' => $request->region
         ]); 
  
-        // if (Auth::attempt([
-        //     'email' => $request->email, 
-        //     'password' => $request->password])) { 
-        //     return redirect('/home');
-        // }
+        if (Auth::attempt([
+            'email' => $request->email, 
+            'password' => $request->password])) { 
+            return redirect('/payment-upload');
+        }
 
         session()->flash('success', 'Registration confirmed. Proceed to login');
         return back();

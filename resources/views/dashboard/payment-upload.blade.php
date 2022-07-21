@@ -107,7 +107,8 @@
                 <small>If you have an image confirmation of payment</small>
             </div>
             <div class="form-group mb-3">
-                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-primary">Submit</button> 
+                <a href="/logout" class="btn btn-info ms-4 ml-4">Return home</a>
             </div>
         </form>
 
