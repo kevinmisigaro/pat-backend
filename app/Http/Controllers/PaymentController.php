@@ -31,10 +31,10 @@ class PaymentController extends Controller
             $recieptController = new RecieptController();
             $recieptController->createReceipt($id);    
 
+            $name = $payment->user->name;
+
             \session()->flash('success', "Successful confirmation for $name");
         }
-
-        $name = $payment->user->name;
 
         return back();
     }
