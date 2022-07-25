@@ -36,8 +36,8 @@ class PaymentController extends Controller
         ]);
 
         $customer = new Party([
-            'name'          =>  $payment->user->name,
-            'phone'         =>  $payment->user->phone
+            'name'          =>  "Name",
+            'phone'         =>  "Phone"
         ]);
 
         $items = [
