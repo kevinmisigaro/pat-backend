@@ -39,12 +39,10 @@ class RecieptController extends Controller
         $notes = implode("<br>", $notes);
 
         $invoice = Invoice::make('receipt')
-        ->series('BIG')
         // ability to include translated invoice status
         // in case it was paid
         ->status(__('invoices::invoice.paid'))
         ->sequence(1)
-        ->serialNumberFormat('{SEQUENCE}/{SERIES}')
         ->seller($client)
         ->buyer($customer)
         ->date(now())
@@ -60,6 +58,6 @@ class RecieptController extends Controller
         ->notes($notes)
         ->logo(public_path('patlogo.png'))
         // You can additionally save generated invoice to configured disk
-        ->save('public/receipts');
+        ->save('public');
     }
 }
