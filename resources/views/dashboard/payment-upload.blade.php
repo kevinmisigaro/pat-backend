@@ -101,6 +101,27 @@
                 <textarea class="form-control" type="text" name="message" rows="3" width="100%"></textarea>
                 <small>If you have a text confirmation of payment</small>
             </div>
+            <div class="form-group mb-3">
+                <label>Message</label>
+                <select class="form-control" name="amount">
+                    <option value="100000">
+                        Early bird - 100,000 TZS
+                    </option>
+                    <option value="150000">
+                        Late bird - 150,000 TZS
+                    </option>
+                    <option value="200000">
+                       On site registration - 100,000 TZS
+                    </option>
+                    <option value="50000">
+                        Associate Member - 50,000 TZS
+                    </option>
+                    <option value="230000">
+                        Non East African Resident - 230,000 TZS
+                    </option>
+                </select>
+                <small>If you have a text confirmation of payment</small>
+            </div>
             <div class="form-group mb-4">
                 <label>Upload Image</label>
                 <input class="form-control" type="file" name="image" />
