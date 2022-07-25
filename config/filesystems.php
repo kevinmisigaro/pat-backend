@@ -45,7 +45,7 @@ return [
         'receipt' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/app/receipts',
+            'url' => env('APP_URL').'/public/receipts',
             'visibility' => 'public',
         ],
 
