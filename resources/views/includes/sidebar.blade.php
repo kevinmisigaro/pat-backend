@@ -33,7 +33,7 @@
 
     <!-- Nav Item - Tables -->
     <li class="nav-item">
-        <a class="nav-link" href="/payments">
+        <a class="nav-link" href="/paymentss">
             <i class="fa fa-users"></i>
             <span>Payments</span></a>
     </li>

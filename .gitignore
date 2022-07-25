@@ -3,6 +3,7 @@
 /public/storage
 /public/documents
 /public/comments
+/public/payment
 /storage/*.key
 /vendor
 .env

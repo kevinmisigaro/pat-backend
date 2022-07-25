@@ -46,7 +46,7 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            // session()->flash('error', 'Enter all details');
+            session()->flash('error', 'Enter all details');
             return back()->withErrors($validator)->withInput($request->input());
         }
 
@@ -74,6 +74,12 @@ class AuthController extends Controller
         if (Auth::attempt([
             'email' => $request->email, 
             'password' => $request->password])) { 
+
+            $mailController = new MailController();
+            $mailController->sendMessage("Successful registration", $request->email, 
+            "You have successfully registered at Paediatric Association of Tanzania. 
+            Please proceed to confirm payment or upload abstract.");
+
             return redirect('/payment-upload');
         }
 

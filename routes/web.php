@@ -59,8 +59,8 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard.payment-upload');
     });
 
-    Route::post('payment',[PaymentController::class,'payment']);
-    Route::get('payments',[PaymentController::class,'getPayments']);
+    Route::post('paymentsss',[PaymentController::class,'payment']);
+    Route::get('paymentss',[PaymentController::class,'getPayments']);
     Route::get('payment/{applicantID}',[DashboardController::class,'payment']);
     Route::get('paymentConfirm/{id}',[PaymentController::class,'paymentConfirm']);
 

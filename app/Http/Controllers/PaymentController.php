@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Payment, Applicant};
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\MailController;
 
 class PaymentController extends Controller
 {
@@ -45,6 +46,10 @@ class PaymentController extends Controller
                 'image' => $filename,
                 'message' => $request->message
             ]);
+
+            $mailController = new MailController();
+            $mailController->sendMessage("Payment submitted", Auth::user()->email, "You have successfully confirmed payment.
+             We shall contact you with your reciept once confirmed.");
 
             \session()->flash('success', 'Payment confirmation submitted');
             return back();

@@ -50,7 +50,7 @@ class MailController extends Controller
 
         try {
            // Email server settings
-           $mail->SMTPDebug = 0;
+         $mail->SMTPDebug = 0;
          $mail->isSMTP();
          $mail->Host = 'mail.pat.co.tz';             //  smtp host
          $mail->SMTPAuth = true;
@@ -58,7 +58,7 @@ class MailController extends Controller
          $mail->Password = 'Christ111!-Francis';       // sender password
          $mail->SMTPSecure = 'ssl';                  // encryption - ssl/tls
          $mail->Port = 465;                          // port - 587/465
-        
+
          $mail->setFrom('info@pat.co.tz', 'PAT');
          $mail->addAddress($recieverEmail);
 

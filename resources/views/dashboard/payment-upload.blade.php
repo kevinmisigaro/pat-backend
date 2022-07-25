@@ -94,7 +94,7 @@
 
         </div>
 
-        <form method="POST" action="/payment" enctype="multipart/form-data">
+        <form method="POST" action="/paymentsss" enctype="multipart/form-data">
             @csrf
             <div class="form-group mb-3">
                 <label>Message</label>
