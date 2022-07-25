@@ -15,7 +15,7 @@ class AddReceiptToPaymentsTable extends Migration
     {
         Schema::table('payments', function (Blueprint $table) {
             $table->string('receipt')->nullable();
-            $table->float('amount',1)->default(0.0);
+            $table->float('amount',7,1)->default(0.0);
         });
     }
 
