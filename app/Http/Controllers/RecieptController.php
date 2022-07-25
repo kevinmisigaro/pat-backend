@@ -14,6 +14,7 @@ class RecieptController extends Controller
     public function createReceipt($paymentID){
 
         $payment = Payment::where('id', $paymentID)->with('user')->first();
+        $userID = $payment->user->id;
 
         $client = new Party([
             'name'          => 'Paediatric Assosication of Tanzania',
@@ -47,7 +48,6 @@ class RecieptController extends Controller
         ->buyer($customer)
         ->date(now())
         ->dateFormat('m/d/Y')
-        ->payUntilDays(1)
         ->currencySymbol('Tshs')
         ->currencyCode('TZS')
         ->currencyFormat('{SYMBOL}{VALUE}')
@@ -59,5 +59,9 @@ class RecieptController extends Controller
         // ->logo(public_path('patlogo.png'))
         // You can additionally save generated invoice to configured disk
         ->save('receipt');
+
+        $payment->update([
+            'receipt' => "$userID".".pdf"
+        ]);
     }
 }

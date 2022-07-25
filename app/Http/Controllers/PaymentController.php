@@ -27,12 +27,14 @@ class PaymentController extends Controller
             'payed' => !$applicant->payed
         ]);
 
-        $recieptController = new RecieptController();
-        $recieptController->createReceipt($id);
+        if($payment->confirmed == true){
+            $recieptController = new RecieptController();
+            $recieptController->createReceipt($id);    
+
+            \session()->flash('success', "Successful confirmation for $name");
+        }
 
         $name = $payment->user->name;
-
-        \session()->flash('success', "Successful confirmation for $name");
 
         return back();
     }
