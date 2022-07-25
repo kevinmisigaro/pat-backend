@@ -120,7 +120,7 @@
                         Non East African Resident - 230,000 TZS
                     </option>
                 </select>
-                <small>If you have a text confirmation of payment</small>
+                {{-- <small>If you have a text confirmation of payment</small> --}}
             </div>
             <div class="form-group mb-4">
                 <label>Upload Image</label>
