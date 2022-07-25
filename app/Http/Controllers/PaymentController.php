@@ -58,7 +58,7 @@ class PaymentController extends Controller
             Payment::create([
                 'user_id' => Auth::id(),
                 'image' => $filename,
-                'amount' => (int)$request->amount,
+                'amount' => (float)$request->amount,
                 'message' => $request->message
             ]);
 
