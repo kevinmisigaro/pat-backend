@@ -67,7 +67,7 @@ class RecieptController extends Controller
         ]);
 
         $body = "<html>
-            Your payment has been confirmed. Here is a link to your receipt $invoice->url().
+            Your payment has been confirmed. Log in to the platform to download your receipt.
             <br><br>
             Thanks,<br>
             PAT.
