@@ -56,7 +56,7 @@ class RecieptController extends Controller
         ->filename($customer->name)
         ->addItems($items)
         ->notes($notes)
-        ->logo(public_path('patlogo.png'))
+        // ->logo(public_path('patlogo.png'))
         // You can additionally save generated invoice to configured disk
         ->save('public');
     }
