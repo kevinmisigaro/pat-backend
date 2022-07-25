@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Payment, Applicant};
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\MailController;
+use App\Http\Controllers\{MailController, ReceiptController};
 
 class PaymentController extends Controller
 {
@@ -26,6 +26,9 @@ class PaymentController extends Controller
         $applicant->update([
             'payed' => !$applicant->payed
         ]);
+
+        $recieptController = new RecieptController();
+        $recieptController->createReceipt($id);
 
         $name = $payment->user->name;
 
@@ -48,8 +51,8 @@ class PaymentController extends Controller
             ]);
 
             $mailController = new MailController();
-            $mailController->sendMessage("Payment submitted", Auth::user()->email, "You have successfully confirmed payment.
-             We shall contact you with your reciept once confirmed.");
+            $mailController->sendMessage("Payment submitted", Auth::user()->email, "You have submitted payment.
+             We shall contact you with your reciept once it has been confirmed confirmed.");
 
             \session()->flash('success', 'Payment confirmation submitted');
             return back();

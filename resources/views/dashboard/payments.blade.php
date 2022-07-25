@@ -97,8 +97,8 @@
                                     </div>
                                     @if ($payment->message == null)
                                     <div class="form-group mb-3">
-                                        <img src="{{ env('APP_URL') }}/payments/{{ $payment->image }}" class="img-fluid"
-                                            alt="..." />
+                                        <img src="{{ env('APP_URL') }}/payment/{{ $payment->image }}" class="img-fluid"
+                                            alt="{{ env('APP_URL') }}/payment/{{ $payment->image }}" />
                                     </div>
                                     @else
                                     <div class="form-group mb-3">
