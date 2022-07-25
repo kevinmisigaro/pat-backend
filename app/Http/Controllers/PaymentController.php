@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Payment, Applicant};
 use Illuminate\Support\Facades\Auth;
+use LaravelDaily\Invoices\Invoice;
+use LaravelDaily\Invoices\Classes\Party;
+use LaravelDaily\Invoices\Classes\InvoiceItem;
 use App\Http\Controllers\{MailController, ReceiptController};
 
 class PaymentController extends Controller
