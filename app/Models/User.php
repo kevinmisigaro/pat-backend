@@ -51,5 +51,8 @@ class User extends Authenticatable
         return $this->hasOne(Applicant::class,'user_id', 'id');
     }
 
+    public function payment(){
+        return  $this->hasOne(Payment::class);
+    }
     
 }

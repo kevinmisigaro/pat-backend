@@ -160,6 +160,14 @@
     @endif
     @endif
 
+    @if (\App\Models\Payment::where(['user_id',\Illuminate\Support\Facades\Auth::id()])
+            whereNotNull('receipt')->exists())
+        <a href="{{ env('APP_URL')/storage/receipts/\App\Models\Payment::where(['user_id',\Illuminate\Support\Facades\Auth::id()])
+        whereNotNull('receipt')->first()->receipt }}" class="btn btn-success" download>
+            Download receipt
+        </a>
+    @endif  
+
 
     @if (\App\Models\Applicant::where(['user_id' => \Illuminate\Support\Facades\Auth::id(), 'payed' => true])->exists())
     <div class="alert alert-success" role="alert">
