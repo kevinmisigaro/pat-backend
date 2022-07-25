@@ -7,6 +7,7 @@ use LaravelDaily\Invoices\Invoice;
 use LaravelDaily\Invoices\Classes\Party;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\MailController;
 use App\Models\{Payment, User};
 
 class RecieptController extends Controller
@@ -15,6 +16,7 @@ class RecieptController extends Controller
 
         $payment = Payment::where('id', $paymentID)->with('user')->first();
         $userID = $payment->user->id;
+        $email = $payment->user->email;
 
         $client = new Party([
             'name'          => 'Paediatric Assosication of Tanzania',
@@ -63,5 +65,15 @@ class RecieptController extends Controller
         $payment->update([
             'receipt' => "$userID".".pdf"
         ]);
+
+        $body = "<html>
+            Your payment has been confirmed. Here is a link to your receipt $invoice->url().
+            <br><br>
+            Thanks,<br>
+            PAT.
+        </html>";
+
+        $mailController = new MailController();
+        $mailController->sendMessage("Payment confirmation", $email,$body);
     }
 }
