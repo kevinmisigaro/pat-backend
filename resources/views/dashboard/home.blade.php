@@ -160,14 +160,6 @@
     @endif
     @endif
 
-    @if (\App\Models\Payment::where('user_id',\Illuminate\Support\Facades\Auth::id())->whereNotNull('receipt')->exists())
-        <a href="{{ url(env('APP_URL').'/storage/receipts/'.\App\Models\Payment::where('user_id',\Illuminate\Support\Facades\Auth::id())
-        ->whereNotNull('receipt')->first()->receipt) }}" class="btn btn-success" download>
-            Download receipt
-        </a>
-    @endif  
-
-
     @if (\App\Models\Applicant::where(['user_id' => \Illuminate\Support\Facades\Auth::id(), 'payed' => true])->exists())
     <div class="alert alert-success" role="alert">
         Payment confirmed
@@ -177,6 +169,14 @@
         Payment not confirmed
     </div>
     @endif
+
+
+    @if (\App\Models\Payment::where('user_id',\Illuminate\Support\Facades\Auth::id())->whereNotNull('receipt')->exists())
+    <a href="{{ url(env('APP_URL').'/storage/receipts/'.\App\Models\Payment::where('user_id',\Illuminate\Support\Facades\Auth::id())
+    ->whereNotNull('receipt')->first()->receipt) }}" class="btn btn-success my-4" download>
+        Download receipt
+    </a>
+@endif 
 
     @php
     $checkIfExists = \App\Models\Applicant::where(
