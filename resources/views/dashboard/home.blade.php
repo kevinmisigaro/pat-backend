@@ -172,7 +172,7 @@
 
 
     @if (\App\Models\Payment::where('user_id',\Illuminate\Support\Facades\Auth::id())->whereNotNull('receipt')->exists())
-    <a href="{{ url(env('APP_URL').'/storage/receipts/'.\App\Models\Payment::where('user_id',\Illuminate\Support\Facades\Auth::id())
+    <a href="{{ url(env('APP_URL').'/storage/'.\App\Models\Payment::where('user_id',\Illuminate\Support\Facades\Auth::id())
     ->whereNotNull('receipt')->first()->receipt) }}" class="btn btn-success my-4" download>
         Download receipt
     </a>
