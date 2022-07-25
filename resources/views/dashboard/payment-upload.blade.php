@@ -102,8 +102,11 @@
                 <small>If you have a text confirmation of payment</small>
             </div>
             <div class="form-group mb-3">
-                <label>Message</label>
+                <label>Registration type</label>
                 <select class="form-control" name="amount">
+                    <option value="">
+                        Select registration type
+                    </option>
                     <option value="100000">
                         Early bird - 100,000 TZS
                     </option>

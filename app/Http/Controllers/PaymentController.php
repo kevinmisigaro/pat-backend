@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Payment, Applicant};
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\{Auth, Validator};
 use App\Http\Controllers\{MailController, ReceiptController};
 
 class PaymentController extends Controller
@@ -40,6 +40,15 @@ class PaymentController extends Controller
     }
     
     public function payment(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'amount' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            session()->flash('error', 'Enter amount');
+            return back();
+        }
 
         if($request->hasFile('image')){
             $img_ext = $request->file('image')->getClientOriginalExtension();
