@@ -73,6 +73,7 @@ class PaymentController extends Controller
        if($request->has('message')){
         Payment::create([
             'user_id' => Auth::id(),
+            'amount' => (float)$request->amount,
             'message' => $request->message
         ]);
 
